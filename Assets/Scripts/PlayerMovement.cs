@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool grounded { get; private set; }
     public bool jumping { get; private set; }
+    public bool running => Mathf.Abs(_velocity.x) > 0.25f || Mathf.Abs(_inputAxis) > 0.25f;
+    public bool sliding => (_inputAxis > 0 && _velocity.x < 0f) || (_inputAxis < 0 && _velocity.x > 0f);
 
     private void Update()
     {
@@ -49,7 +51,21 @@ public class PlayerMovement : MonoBehaviour
     private void HorizintalMovement()
     {
         _inputAxis = Input.GetAxis("Horizontal");
-        _velocity.x = Mathf.MoveTowards(_velocity.x, _inputAxis * _moveSpeed, _moveSpeed * Time.deltaTime); 
+        _velocity.x = Mathf.MoveTowards(_velocity.x, _inputAxis * _moveSpeed, _moveSpeed * Time.deltaTime);
+
+        if (_rigidbody.Raycast(Vector2.right *_velocity.x))
+        {
+            _velocity.x = 0f;
+        }
+
+        if (_velocity.x > 0f)
+        {
+            transform.eulerAngles = Vector3.zero;
+        }
+        else if (_velocity.x < 0f)
+        {
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+        }
     }
 
     private void GroundedMovement()

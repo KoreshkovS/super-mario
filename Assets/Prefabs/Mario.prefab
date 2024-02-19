@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1304096484807677230}
   - component: {fileID: 6505861997941776561}
+  - component: {fileID: 5756691231883479009}
+  - component: {fileID: 1256530677}
   m_Layer: 3
   m_Name: Small
   m_TagString: Untagged
@@ -84,6 +86,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5756691231883479009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331235296554604154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75493964cccc542f49e6b6b2f6e10b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 6505861997941776561}
+  _movement: {fileID: 973667099715593826}
+  _idle: {fileID: 21300000, guid: 316669850fc22b947a5ffd08a201559e, type: 3}
+  _jump: {fileID: 21300000, guid: fe0645aacf16c3c4cab67a8ac2e3bc3a, type: 3}
+  _slide: {fileID: 21300000, guid: 98014fa15d2f2f84495aa2512e65cfba, type: 3}
+  _run: {fileID: 21300000, guid: f8683836d7ce2e84ca96fcced8e51144, type: 3}
+--- !u!114 &1256530677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5331235296554604154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d851962655554de6b6916b6c86f732f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: f8683836d7ce2e84ca96fcced8e51144, type: 3}
+  - {fileID: 21300000, guid: 35672984aa1fd894da6716da8832d93a, type: 3}
+  - {fileID: 21300000, guid: d819e2f75eeea5242b6de17737bb2268, type: 3}
+  - {fileID: 21300000, guid: 35672984aa1fd894da6716da8832d93a, type: 3}
+  _framerate: 0.16666667
+  _spriteRenderer: {fileID: 6505861997941776561}
 --- !u!1 &6624060489143515357
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +133,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6627565604691130859}
   - component: {fileID: 2987262169368406398}
+  - component: {fileID: 4414293830368790630}
+  - component: {fileID: 1139999477}
   m_Layer: 3
   m_Name: Big
   m_TagString: Untagged
@@ -168,6 +209,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4414293830368790630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6624060489143515357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75493964cccc542f49e6b6b2f6e10b3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 2987262169368406398}
+  _movement: {fileID: 973667099715593826}
+  _idle: {fileID: 21300000, guid: 17d0f5a19508c994e86dbee100fa8269, type: 3}
+  _jump: {fileID: 21300000, guid: 5772f9c35b012a14aac1cbcef7adfcea, type: 3}
+  _slide: {fileID: 21300000, guid: bfb02f37424e1504cb18192b8e445d43, type: 3}
+  _run: {fileID: 21300000, guid: 70a814181cd2645409e832dd63d92fb0, type: 3}
+--- !u!114 &1139999477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6624060489143515357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d851962655554de6b6916b6c86f732f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 70a814181cd2645409e832dd63d92fb0, type: 3}
+  - {fileID: 21300000, guid: c2e5aa3daa0fa16469ff9173a4c623fb, type: 3}
+  - {fileID: 21300000, guid: bd69c9ac1c7046d41862f618d99ca856, type: 3}
+  - {fileID: 21300000, guid: c2e5aa3daa0fa16469ff9173a4c623fb, type: 3}
+  _framerate: 0.16666667
+  _spriteRenderer: {fileID: 2987262169368406398}
 --- !u!1 &8409469016985286617
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,10 +298,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Material: {fileID: 6200000, guid: 734ed9c3c42d245bf92bf6ebd33d9614, type: 2}
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &7128138193162886431
 CapsuleCollider2D:
@@ -234,7 +312,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 8409469016985286617}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 77260d024768c4963a1d78ce3c6c9b81, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
