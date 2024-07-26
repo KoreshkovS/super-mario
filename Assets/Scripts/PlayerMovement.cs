@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         _inputAxis = Input.GetAxis("Horizontal");
         _velocity.x = Mathf.MoveTowards(_velocity.x, _inputAxis * _moveSpeed, _moveSpeed * Time.deltaTime);
 
-        if (_rigidbody.Raycast(Vector2.right *_velocity.x))
+        if (_rigidbody.Raycast(Vector2.right * _velocity.x))
         {
             _velocity.x = 0f;
         }
@@ -91,7 +91,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer != LayerMask.NameToLayer("PowerUp"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            if (transform.DotTest(collision.transform, Vector2.down))
+            {
+                _velocity.y = jumpForce / 2f;
+                jumping = true;
+            }
+        }
+        else if (collision.gameObject.layer != LayerMask.NameToLayer("PowerUp"))
         {
             if (transform.DotTest(collision.transform, Vector2.up))
             {
