@@ -10,6 +10,9 @@ public class EntityMovement : MonoBehaviour
 
     private Vector2 _velocity;
 
+    public Vector2 Direction { get => _direction; set => _direction = value; }
+    public float Speed { get => _speed; set => _speed = value; }
+
     private void Awake()
     {
         enabled = false;
@@ -38,14 +41,14 @@ public class EntityMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _velocity.x = _direction.x * _speed;
+        _velocity.x = Direction.x * Speed;
         _velocity.y += Physics2D.gravity.y * Time.fixedDeltaTime;
 
         _rigidbody.MovePosition(_rigidbody.position + _velocity * Time.fixedDeltaTime);
 
-        if (_rigidbody.Raycast(_direction))
+        if (_rigidbody.Raycast(Direction))
         {
-            _direction = -_direction;
+            Direction = -Direction;
         }
 
         if (_rigidbody.Raycast(Vector2.down))

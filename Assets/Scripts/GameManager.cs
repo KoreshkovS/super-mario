@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         this.world = world;
         this.stage = stage;
-
+        
         SceneManager.LoadScene($"{world}-{stage}");
     }
 
